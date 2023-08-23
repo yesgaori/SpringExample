@@ -1,17 +1,25 @@
 package com.yesgaori.spring.ex.database.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.yesgaori.spring.ex.database.domain.UsedGoods;
+import com.yesgaori.spring.ex.database.repository.UsedGoodsRepository;
 
 // 로직 (business) 담당
 @Service
 public class UsedGoodsService {
 	
-	private 
+	@Autowired
+	private UsedGoodsRepository usedGoodsRepository;
 	
 	// used_goods 모든 데이터 조회
-	public getUseddGoodsList() {
+	public List<UsedGoods> getUsedGoodsList() {
 		
-		
+		List<UsedGoods> usedGoodsList = usedGoodsRepository.selectUsedGoodsList();
+		return usedGoodsList;
 	}
 	
 }
